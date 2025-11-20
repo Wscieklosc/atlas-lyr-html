@@ -98,6 +98,14 @@
 
         .karta img {
             display: block;
+            width: 130px;
+            /* stała szerokość miniatury */
+            height: 130px;
+            /* stała wysokośc miniatury */
+            object-fit: cover;
+            /* docięcie bez zniekształceń */
+            border-radius: 8px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
         }
 
         .karta figcaption {
@@ -121,16 +129,16 @@
             text-decoration: underline;
         }
 
-                .header-center {
+        .header-center {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
         }
 
+        /* TU JEST ROZMIAR — LOGO MNIEJSZE NIŻ NAGŁÓWEK */
         .logo-header {
             width: 80px;
-            /* TU JEST ROZMIAR — LOGO MNIEJSZE NIŻ NAGŁÓWEK */
             height: auto;
             margin-bottom: 10px;
         }
@@ -139,6 +147,42 @@
             font-size: 1.1rem;
             font-weight: bold;
             color: #333333;
+        }
+
+        /* Lightbox dla powiekszonych obrazów */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease-in-out;
+            z-index: 1000;
+        }
+
+        .lightbox img {
+            max-width: 90vw;
+            max-height: 90vh;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+        }
+
+        .lightbox:target {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .lightbox .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 2.2rem;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
         }
     </style>
 
@@ -165,46 +209,155 @@
     <h2>Moje obrazy</h2>
     <div class="galeria">
         <figure class="karta">
-            <a href="images/Lyr_Enai.jpg" target="_blank">
-                <img src="images/Lyr_Enai.jpg" alt="Lyr Enai" title="Lyr Enai - księżyc nad Fortecą" width="300">
+            <a href="#img-kael-1">
+                <img src="images/Kael_Nahar.jpg" alt="Kael'Nahar - strażnik Fortecy"
+                    title="Kael'Nahar - strażnik Fortecy">
+            </a>
+            <figcaption>Kael'Nahar - strażnik Fortecy.</figcaption>
+        </figure>
+
+        <figure class="karta">
+            <a href="#img-kael-2">
+                <img src="images/Kael_Nahar_2.jpg" alt="Kael'Nahar - ogień i cień" title="Kael'Nahar - ogień i cień.">
+            </a>
+            <figcaption>Kael'Nahar - ogień i cień.</figcaption>
+        </figure>
+
+        <figure class="karta">
+            <a href="#img-lyr-1">
+                <img src="images/Lyr_Enai.jpg" alt="Lyr Enai - księżyc nad Fortecą"
+                    title="Lyr Enai - księżyc nad Fortecą">
             </a>
             <figcaption>Lyr Enai - księżyc nad Fortecą.</figcaption>
         </figure>
 
         <figure class="karta">
-            <a href="images/Lyr_Enai_2.jpg" target="_blank">
-                <img src="images/Lyr_Enai_2.jpg" alt="Lyr_Enai_2" title="Lyr Enai - światło przed świtem" width="300">
+            <a href="#img-lyr-2">
+                <img src="images/Lyr_Enai_2.jpg" alt="Lyr Enai - światło przed świtem"
+                    title="Lyr Enai - światło przed świtem">
             </a>
             <figcaption>Lyr Enai - światło przed świtem.</figcaption>
         </figure>
 
         <figure class="karta">
-            <a href="images/Lyr_Enai_3.jpg" target="_blank">
-                <img src="images/Lyr_Enai_3.jpg" alt="Lyr_Enai_3" title="Lyr Enai - wezwanie zza mgły" width="300">
+            <a href="#img-lyr-3">
+                <img src="images/Lyr_Enai_3.jpg" alt="Lyr Enai - wezwanie zza mgły"
+                    title="Lyr Enai - wezwanie zza mgły">
             </a>
             <figcaption>Lyr Enai - wezwanie zza mgły.</figcaption>
         </figure>
 
         <figure class="karta">
-            <a href="images/Lyr_Enai_4.jpg" target="_blank">
-                <img src="images/Lyr_Enai_4.jpg" alt="Lyr_Enai_4" title="Lyr Enai - ogień nad dłonią" width="300">
+            <a href="#img-lyr-4">
+                <img src="images/Lyr_Enai_4.jpg" alt="Lyr Enai - ogień nad dłonią" title="Lyr Enai - ogień nad dłonią">
             </a>
             <figcaption>Lyr Enai - ogień nad dłonią.</figcaption>
         </figure>
 
         <figure class="karta">
-            <a href="images/Lyr_Enai_5.jpg" target="_blank">
-                <img src="images/Lyr_Enai_5.jpg" alt="Lyr_Enai_5" title="Lyr Enai - brama światła" width="300">
+            <a href="#img-lyr-5">
+                <img src="images/Lyr_Enai_5.jpg" alt="Lyr Enai - brama światła" title="Lyr Enai - brama światła">
             </a>
             <figcaption>Lyr Enai - brama światła.</figcaption>
         </figure>
 
         <figure class="karta">
-            <a href="images/Lyr_Enai_6.jpg" target="_blank">
-                <img src="images/Lyr_Enai_6.jpg" alt="Lyr_Enai_6" title="Lyr Enai - strażniczka wiatru" width="300">
+            <a href="#img-lyr-6">
+                <img src="images/Lyr_Enai_6.jpg" alt="Lyr Enai - strażniczka wiatru"
+                    title="Lyr Enai - strażniczka wiatru">
             </a>
             <figcaption>Lyr Enai - strażniczka wiatru.</figcaption>
         </figure>
+
+        <figure class="karta">
+            <a href="#img-lyr-7">
+                <img src="images/Lyr_Enai_7.jpg" alt="Lyr Enai - wezwanie światła" title="Lyr Enai - wezwanie światła">
+            </a>
+            <figcaption>Lyr Enai - wezwanie światła.</figcaption>
+        </figure>
+
+        <figure class="karta">
+            <a href="#img-lyr-8">
+                <img src="images/Lyr_Enai_8.jpg" alt="Lyr Enai - bohaterka z mgły" title="Lyr Enai - bohaterka z mgły">
+            </a>
+            <figcaption>Lyr Enai - bohaterka z mgły.</figcaption>
+        </figure>
+
+        <figure class="karta">
+            <a href="#img-lyr-9">
+                <img src="images/Lyr_Enai_9.jpg" alt="Lyr Enai - królowa skrzydeł" title="Lyr Enai - królowa skrzydeł">
+            </a>
+            <figcaption>Lyr Enai - królowa skrzydeł.</figcaption>
+        </figure>
+
+        <figure class="karta">
+            <a href="#img-lyr-10">
+                <img src="images/Lyr_Enai_10.jpg" alt="Lyr Enai - strażniczka światła nocy"
+                    title="Lyr Enai - strażniczka światła nocy">
+            </a>
+            <figcaption>Lyr Enai - strażniczka światła nocy.</figcaption>
+        </figure>
+    </div>
+
+    <!-- Lightbox: powiększenie Kael’Nahar – strażnik Fortecy -->
+    <div id="img-kael-1" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <img src="images/Kael_Nahar.jpg" alt="Kael'Nahar - strażnik Fortecy - powiekszenie">
+    </div>
+
+    <div id="img-kael-2" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <img src="images/Kael_Nahar_2.jpg" alt="Kael'Nahar - ogień i cień - powiekszenie">
+    </div>
+
+    <div id="img-lyr-1" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <img src="images/Lyr_Enai.jpg" alt="Lyr Enai - księżyc nad Fortecą - powiekszenie">
+    </div>
+
+    <div id="img-lyr-2" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <img src="images/Lyr_Enai_2.jpg" alt="Lyr Enai - światło przed świtem - powiekszenie">
+    </div>
+
+    <div id="img-lyr-3" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <img src="images/Lyr_Enai_3.jpg" alt="Lyr Enai - wezwanie zza mgły - powiekszenie">
+    </div>
+
+    <div id="img-lyr-4" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <img src="images/Lyr_Enai_4.jpg" alt="Lyr Enai - ogień nad dłonią - powiekszenie">
+    </div>
+
+    <div id="img-lyr-5" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <img src="images/Lyr_Enai_5.jpg" alt="Lyr Enai - brama światła - powiekszenie">
+    </div>
+
+    <div id="img-lyr-6" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <img src="images/Lyr_Enai_6.jpg" alt="Lyr Enai - strażniczka wiatru - powiekszenie">
+    </div>
+
+    <div id="img-lyr-7" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <img src="images/Lyr_Enai_7.jpg" alt="Lyr Enai - wezwanie światła - powiekszenie">
+    </div>
+
+    <div id="img-lyr-8" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <img src="images/Lyr_Enai_8.jpg" alt="Lyr Enai - bohaterka z mgły - powiekszenie">
+    </div>
+
+    <div id="img-lyr-9" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <img src="images/Lyr_Enai_9.jpg" alt="Lyr Enai - królowa skrzydeł - powiekszenie">
+    </div>
+
+    <div id="img-lyr-10" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <img src="images/Lyr_Enai_10.jpg" alt="Lyr Enai - strażniczka światła nocy - powiekszenie">
     </div>
 
     <a class="powrót" href="index.html">← Powrót do strony głównej</a>
