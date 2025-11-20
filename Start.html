@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Start</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background: #1a1a1a;
+            /* ciemne tło */
+            color: #e6e6e6;
+            /* jasny tekst */
+        }
+
+        .topbar {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .menu a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #333333;
+            font-weight: bold;
+        }
+
+        .menu a:hover {
+            color: #000000;
+        }
+
+        .powrót {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            color: #88aaff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .powrót:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+                .header-center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-header {
+            width: 80px;
+            /* TU JEST ROZMIAR — LOGO MNIEJSZE NIŻ NAGŁÓWEK */
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .logo-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #333333;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="topbar">
+
+        <div class="header-center">
+            <img src="images/Wscieklosc_ikona.png" alt="Logo Wściekłość" class="logo-header">
+            <div class="logo-title">Moja Pierwsza Strona HTML</div>
+        </div>
+
+        <nav class="menu">
+            <a href="Start.html">Start</a>
+            <a href="Galeria.html">Galeria</a>
+            <a href="kontakt.html">Kontakt</a>
+        </nav>
+    </header>
+    <a class="powrót" href="index.html">← Powrót do strony głównej</a>
+
+    <footer class="stopka">
+        <p>&copy; 2025 Martino / Kael'Nahar · Strona tworzona razem z Lyr Enai.</p>
+    </footer>
+</body>
+
+</html>

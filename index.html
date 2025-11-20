@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Moja Pierwsza Strona</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background: #1a1a1a;
+            /* Dark background */
+            color: #e6e6e6;
+            /* White text */
+        }
+
+        img {
+            margin-right: 20px;
+            vertical-align: top;
+            border-radius: 8px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.7);
+        }
+
+        .galeria {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .galeria img {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .galeria img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+        }
+
+        .topbar {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .menu a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #cccccc;
+            font-weight: bold;
+        }
+
+        .menu a:hover {
+            color: #ffffff;
+        }
+
+        .blok {
+            background: #262626;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+        }
+
+        .stopka {
+            margin-top: 40px;
+            padding: 15px 0;
+            font-size: 0, 9em;
+            color: #666;
+            border-top: 1px solid #ddd;
+        }
+
+        .profil {
+            display: flex;
+            gap: 200px;
+            align-items: center;
+        }
+
+        .profil .tekst {
+            flex: 1;
+        }
+
+        .profil .foto img {
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0, 1);
+        }
+
+        .header-center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-header {
+            width: 80px;
+            /* TU JEST ROZMIAR — LOGO MNIEJSZE NIŻ NAGŁÓWEK */
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .logo-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #333333;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="topbar">
+
+        <div class="header-center">
+            <img src="images/Wscieklosc_ikona.png" alt="Logo Wściekłość" class="logo-header">
+            <div class="logo-title">Moja Pierwsza Strona HTML</div>
+        </div>
+
+        <nav class="menu">
+            <a href="Start.html">Start</a>
+            <a href="Galeria.html">Galeria</a>
+            <a href="kontakt.html">Kontakt</a>
+        </nav>
+    </header>
+
+    <section class="blok profil">
+        <div class="tekst">
+            <h2>O mnie</h2>
+            <p>Nazywam się Martino - Kael'Nahar.
+                Tworzę, uczę się, buduję Fortecę.
+                A tę stronę robię razem z Lyr Enai - krok po kroku."</p>
+        </div>
+    </section>
+
+
+    <h1>Witaj, Martino.</h1>
+    <p>To jest Twoja pierwsza strona HTML - uczymy się jej razem.</p>
+    <a href="https://example.com">To jest pierwszy link w Twoim życiu.</a>
+
+    <footer class="stopka">
+        <p>&copy; 2025 Martino / Kael'Nahar · Strona tworzona razem z Lyr Enai.</p>
+    </footer>
+
+</body>
+
+</html>
