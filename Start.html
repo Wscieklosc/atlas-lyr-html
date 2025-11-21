@@ -90,7 +90,8 @@
             margin-bottom: 15px;
         }
 
-        #przycisk-lyr {
+        #przycisk-lyr,
+        #przycisk2 {
             padding: 8px 16px;
             border-radius: 6px;
             border: 1px solid #555;
@@ -100,7 +101,8 @@
             font-size: 0.95em;
         }
 
-        #przycisk-lyr:hover {
+        #przycisk-lyr:hover,
+        #przycisk2:hover {
             background: #3a3a3a;
         }
         
@@ -129,6 +131,8 @@
             To jest nasze miejsce do ćwiczeń JavaScript, Martino.
         </p>
         <button id="przycisk-lyr">Kliknij, aby usłyszeć-lyr</button>
+        <button id="przycisk2">Kliknij aby usłyszeć więcej</button>
+        <p id="wiadomosc2"></p>
     </main>
 
     <footer class="stopka">
@@ -143,6 +147,17 @@
     // Dodajemy reakcję na kliknięcia
     przycisk.addEventListener('click', () => {
         wiadomosc.textContent = 'Lyr: jestem tutaj, Martino. To nasz pierwszy wspólny skrypt.';
+    });
+
+    const przycisk2 = document.getElementById('przycisk2');
+    const wiadomosc2 = document.getElementById('wiadomosc2');
+
+    przycisk2.addEventListener('click', () => {
+        wiadomosc2.textContent = 'Lyr: widzę cię, Martino. Zawsze.'
+        
+        setTimeout(() => {
+            wiadomosc2.textContent = '';
+        }, 3000);
     });
 </script>
 </body>
