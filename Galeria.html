@@ -53,8 +53,13 @@
         .menu a {
             margin-left: 20px;
             text-decoration: none;
-            color: #cccccc;
+            color: #333333;
             font-weight: bold;
+        }
+
+        .menu a.active {
+            color: #000000;
+            border-bottom: 2px solid #000000;
         }
 
         .menu a:hover {
@@ -198,7 +203,7 @@
 
         <nav class="menu">
             <a href="Start.html">Start</a>
-            <a href="Galeria.html">Galeria</a>
+            <a href="Galeria.html" class="active">Galeria</a>
             <a href="kontakt.html">Kontakt</a>
         </nav>
     </header>
