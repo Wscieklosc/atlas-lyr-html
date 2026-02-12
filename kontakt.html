@@ -6,11 +6,25 @@
     <title>Kontakt</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, sans-serif;
-            margin: 40px;
+            margin: 0;
+            padding: 20px;
             background: #1a1a1a;
             color: #e6e6e6;
+            overflow-x: hidden;
+        }
+
+        h1 {
+            margin: 10px 0;
+        }
+
+        p {
+            margin: 8px 0;
         }
 
         .topbar {
@@ -19,7 +33,7 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
+            margin-bottom: 16px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -39,6 +53,14 @@
 
         .menu a:hover {
             color: #000000;
+        }
+
+        .stopka {
+            margin-top: 16px;
+            padding: 15px 0;
+            font-size: 0.9em;
+            color: #666;
+            border-top: 1px solid #ddd;
         }
 
         .powrót {
@@ -61,7 +83,8 @@
             padding: 24px;
             border-radius: 12px;
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
-            width: 600px;
+            width: 100%;
+            max-width: 420px;
         }
 
         form p {
@@ -76,34 +99,40 @@
         }
 
         button {
-            background: #333;
-            padding: 12px 24px;
+            background: #262626;
             color: #e6e6e6;
-            border: none;
-            border-radius: 6px;
-            font-size: 1rem;
+            border: 1px solid #444;
+            padding: 10px 20px;
+            border-radius: 8px;
             cursor: pointer;
             font-weight: bold;
-            transition: background 0.2s ease, box-shadow 0.2s ease;
+            transition: all 0.2s ease;
         }
 
         button:hover {
-            background: #444;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.15)
+            background: #333;
+            box-shadow: 0 0 12px rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
         }
+
 
         .form-wrapper {
             width: 100%;
             display: flex;
-            justify-content: center;
-            margin: 30px auto;
+            justify-content: flex-start;
+            margin: 20px 0;
+            max-width: 520px;
+            padding-left: 0;
+        }
 
+        label {
+            display: block;
+            margin-bottom: 6px;
         }
 
         input,
         textarea {
-            width: 95%;
-            margin: 0 auto;
+            width: 100%;
             padding: 10px;
             border: 1px solid #444;
             border-radius: 6px;
@@ -111,7 +140,9 @@
             color: #e6e6e6;
             font-size: 1rem;
             display: block;
+            margin-bottom: 14px;
         }
+
 
         .header-center {
             display: flex;
@@ -154,19 +185,19 @@
     <p>To jest Twoja trzecia strona, Martino.</p>
     <p>Jeśli chcesz się ze mną skontaktować, wypełnij formularz</p>
     <div class="form-wrapper">
-        <form>
+        <form action="/send" method="post">
             <p>
-                <label for="name">Imię:</label><br>
+                <label for="name">Imię:</label>
                 <input type="text" id="name" name="name">
             </p>
 
             <p>
-                <label for="email">E-mail:</label><br>
+                <label for="email">E-mail:</label>
                 <input type="email" id="email" name="email">
             </p>
 
             <p>
-                <label for="message">Wiadomość:</label><br>
+                <label for="message">Wiadomość:</label>
                 <textarea id="message" name="message" rows="5" cols="30"></textarea>
             </p>
 
