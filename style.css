@@ -53,8 +53,7 @@ img {
 }
 
 .menu a.active {
-    color: #000000;
-    border-bottom: 2px solid #000000;
+    border-bottom: 2px solid #e6e6e6;
 }
 
 .menu a:hover {
@@ -70,7 +69,7 @@ img {
 }
 
 .stopka {
-    margin-top: 40px;
+    margin-top: 20px;
     padding: 15px 0;
     font-size: 0.9em;
     color: #666;
@@ -265,8 +264,8 @@ main h1 {
 /* ===== KONTAKT ===== */
 
 body.kontakt {
-  margin: 0;
-  padding: 20px;
+  margin: 40px;
+  padding: 0;
   overflow-x: hidden;
 }
 
