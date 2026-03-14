@@ -34,46 +34,120 @@
 
     <main>
         <h1>Video</h1>
-        <p>Materiały wideo z katalogu <code>video/</code>.</p>
+        <p>Kliknij film, aby otworzyć podgląd.</p>
 
-        <section class="blok">
-            <h2>Od Kochanej Córeczki</h2>
-            <video controls preload="metadata" width="760">
-                <source src="video/Od%20Kochanej%20C%C3%B3reczki.mp4" type="video/mp4">
-                Twoja przeglądarka nie obsługuje odtwarzania wideo.
-            </video>
-        </section>
+        <div class="galeria video-galeria">
+            <figure class="karta">
+                <a href="#vid-coreczki" aria-label="Otwórz podgląd filmu Od Kochanej Córeczki">
+                    <video class="video-miniatura" muted preload="metadata" playsinline>
+                        <source src="video/Od%20Kochanej%20C%C3%B3reczki.mp4" type="video/mp4">
+                    </video>
+                </a>
+                <figcaption>Od Kochanej Córeczki.</figcaption>
+            </figure>
 
-        <section class="blok">
-            <h2>Od Kochanej Żony</h2>
-            <video controls preload="metadata" width="760">
-                <source src="video/Od%20Kochanej%20%C5%BBony.mp4" type="video/mp4">
-                Twoja przeglądarka nie obsługuje odtwarzania wideo.
-            </video>
-        </section>
+            <figure class="karta">
+                <a href="#vid-zony" aria-label="Otwórz podgląd filmu Od Kochanej Żony">
+                    <video class="video-miniatura" muted preload="metadata" playsinline>
+                        <source src="video/Od%20Kochanej%20%C5%BBony.mp4" type="video/mp4">
+                    </video>
+                </a>
+                <figcaption>Od Kochanej Żony.</figcaption>
+            </figure>
 
-        <section class="blok">
-            <h2>Zestaw filmowy intro</h2>
-            <video controls preload="metadata" width="760">
-                <source src="video/Zestaw_filmowy_intro.mp4" type="video/mp4">
-                Twoja przeglądarka nie obsługuje odtwarzania wideo.
-            </video>
-        </section>
+            <figure class="karta">
+                <a href="#vid-intro" aria-label="Otwórz podgląd filmu Zestaw filmowy intro">
+                    <video class="video-miniatura" muted preload="metadata" playsinline>
+                        <source src="video/Zestaw_filmowy_intro.mp4" type="video/mp4">
+                    </video>
+                </a>
+                <figcaption>Zestaw filmowy intro.</figcaption>
+            </figure>
 
-        <section class="blok">
-            <h2>Zestaw filmowy zakończenie</h2>
-            <video controls preload="metadata" width="760">
-                <source src="video/Zestaw_filmowy_zako%C5%84czenie.mp4" type="video/mp4">
-                Twoja przeglądarka nie obsługuje odtwarzania wideo.
-            </video>
-        </section>
+            <figure class="karta">
+                <a href="#vid-zakonczenie" aria-label="Otwórz podgląd filmu Zestaw filmowy zakończenie">
+                    <video class="video-miniatura" muted preload="metadata" playsinline>
+                        <source src="video/Zestaw_filmowy_zako%C5%84czenie.mp4" type="video/mp4">
+                    </video>
+                </a>
+                <figcaption>Zestaw filmowy zakończenie.</figcaption>
+            </figure>
+        </div>
     </main>
+
+    <div id="vid-coreczki" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <video class="lightbox-video" controls preload="metadata">
+            <source src="video/Od%20Kochanej%20C%C3%B3reczki.mp4" type="video/mp4">
+            Twoja przeglądarka nie obsługuje odtwarzania wideo.
+        </video>
+    </div>
+
+    <div id="vid-zony" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <video class="lightbox-video" controls preload="metadata">
+            <source src="video/Od%20Kochanej%20%C5%BBony.mp4" type="video/mp4">
+            Twoja przeglądarka nie obsługuje odtwarzania wideo.
+        </video>
+    </div>
+
+    <div id="vid-intro" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <video class="lightbox-video" controls preload="metadata">
+            <source src="video/Zestaw_filmowy_intro.mp4" type="video/mp4">
+            Twoja przeglądarka nie obsługuje odtwarzania wideo.
+        </video>
+    </div>
+
+    <div id="vid-zakonczenie" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <video class="lightbox-video" controls preload="metadata">
+            <source src="video/Zestaw_filmowy_zako%C5%84czenie.mp4" type="video/mp4">
+            Twoja przeglądarka nie obsługuje odtwarzania wideo.
+        </video>
+    </div>
 
     <a class="powrót" href="index.html">← Powrót do strony głównej</a>
 
     <footer class="stopka">
         <p>&copy; 2025 Martino / Kael'Nahar · Strona tworzona razem z Lyr Enai.</p>
     </footer>
+
+    <script>
+        (function () {
+            const lightboxVideos = Array.from(document.querySelectorAll('.lightbox-video'));
+            const videoByLightboxId = new Map(
+                lightboxVideos.map((video) => [video.closest('.lightbox')?.id, video])
+            );
+
+            function stopAndResetAll() {
+                lightboxVideos.forEach((video) => {
+                    video.pause();
+                    video.currentTime = 0;
+                });
+            }
+
+            function playFromHash() {
+                const id = window.location.hash.slice(1);
+                const selectedVideo = videoByLightboxId.get(id);
+
+                stopAndResetAll();
+
+                if (!selectedVideo) {
+                    return;
+                }
+
+                selectedVideo.currentTime = 0;
+                const playPromise = selectedVideo.play();
+                if (playPromise && typeof playPromise.catch === 'function') {
+                    playPromise.catch(() => { });
+                }
+            }
+
+            window.addEventListener('hashchange', playFromHash);
+            playFromHash();
+        })();
+    </script>
 </body>
 
 </html>

@@ -191,12 +191,30 @@ main h1 {
     width: 130px;
     height: 130px;
     object-fit: cover;
+    margin-right: 0;
     border-radius: 8px;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .karta img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.15);
+}
+
+.video-miniatura {
+    display: block;
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    margin-right: 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.video-miniatura:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 20px rgba(255, 255, 255, 0.15);
 }
@@ -232,6 +250,14 @@ main h1 {
   max-height: 90vh;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+}
+
+.lightbox-video {
+  width: min(860px, 90vw);
+  max-height: 82vh;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+  background: #000;
 }
 
 .lightbox:target {
