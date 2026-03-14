@@ -18,21 +18,6 @@ img {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.7);
 }
 
-.galeria {
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
-}
-
-.galeria img {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.galeria img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
-}
-
 .topbar {
     background: #262626;
     color: #e6e6e6;
@@ -162,6 +147,8 @@ main h1 {
     flex-wrap: wrap;
     margin-top: 25px;
     justify-content: flex-start;
+    gap: 20px;
+    align-items: flex-start;
 }
 
 .karta {
@@ -250,6 +237,16 @@ p {
   margin: 20px 0;
   max-width: 520px;
   padding-left: 0;
+}
+
+.kontakt-success {
+  margin: 14px 0 4px;
+  padding: 10px 12px;
+  max-width: 520px;
+  border: 1px solid #2f5a44;
+  border-radius: 8px;
+  background: #1a2a21;
+  color: #c8efd8;
 }
 
 form {

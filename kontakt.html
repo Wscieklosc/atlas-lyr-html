@@ -33,6 +33,7 @@
     <h1>Kontakt</h1>
     <p>To jest Twoja trzecia strona, Martino.</p>
     <p>Jeśli chcesz się ze mną skontaktować, wypełnij formularz</p>
+    <p id="kontakt-success" class="kontakt-success" hidden aria-live="polite"></p>
     <div class="form-wrapper">
         <form action="/send" method="post">
             <p>
@@ -60,6 +61,21 @@
     <footer class="stopka">
         <p>&copy; 2025 Martino / Kael'Nahar · Strona tworzona razem z Lyr Enai.</p>
     </footer>
+    <script>
+        (function() {
+            const params = new URLSearchParams(window.location.search);
+            if (params.get('ok') !== '1') return;
+
+            const info = document.getElementById('kontakt-success');
+            if (!info) return;
+
+            const file = params.get('file');
+            info.hidden = false;
+            info.textContent = file ?
+                `Wiadomość została wysłana pomyślnie. Zapisano jako: ${file}` :
+                'Wiadomość została wysłana pomyślnie.';
+        })();
+    </script>
 </body>
 
 </html>
