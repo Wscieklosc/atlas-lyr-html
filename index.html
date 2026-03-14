@@ -29,6 +29,17 @@
                 <i class="fa-solid fa-user"></i> Kontakt
             </a>
         </nav>
+        <script>
+            // Automatically highlight the current navigation link based on the URL
+            (function() {
+                const current = window.location.pathname.split('/').pop() || 'index.html';
+                document.querySelectorAll('.menu a').forEach(link => {
+                    if (link.getAttribute('href') === current) {
+                        link.classList.add('active');
+                    }
+                });
+            })();
+        </script>
     </header>
 
     <section class="blok profil">
