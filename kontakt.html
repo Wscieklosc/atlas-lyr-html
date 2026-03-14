@@ -74,6 +74,15 @@
             info.textContent = file ?
                 `Wiadomość została wysłana pomyślnie. Zapisano jako: ${file}` :
                 'Wiadomość została wysłana pomyślnie.';
+
+            setTimeout(function() {
+                info.hidden = true;
+            }, 5000);
+
+            const cleanUrl = new URL(window.location.href);
+            cleanUrl.searchParams.delete('ok');
+            cleanUrl.searchParams.delete('file');
+            history.replaceState(null, '', cleanUrl.pathname + cleanUrl.search + cleanUrl.hash);
         })();
     </script>
 </body>
