@@ -18,7 +18,10 @@
         </div>
 
         <nav class="menu">
-            <a href="Start.html" class="active">
+            <a href="index.html">
+                <i class="fa-solid fa-house"></i> Home
+            </a>
+            <a href="Start.html">
                 <i class="fa-solid fa-play"></i> Start
             </a>
             <a href="Galeria.html">
@@ -31,6 +34,16 @@
                 <i class="fa-solid fa-user"></i> Kontakt
             </a>
         </nav>
+        <script>
+            (function () {
+                const current = window.location.pathname.split('/').pop() || 'index.html';
+                document.querySelectorAll('.menu a').forEach(link => {
+                    if (link.getAttribute('href') === current) {
+                        link.classList.add('active');
+                    }
+                });
+            })();
+        </script>
     </header>
     <a class="powrót" href="index.html">← Powrót do strony głównej</a>
 

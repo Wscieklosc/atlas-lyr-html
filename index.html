@@ -18,6 +18,9 @@
         </div>
 
         <nav class="menu">
+            <a href="index.html">
+                <i class="fa-solid fa-house"></i> Home
+            </a>
             <a href="Start.html">
                 <i class="fa-solid fa-play"></i> Start
             </a>
@@ -32,7 +35,6 @@
             </a>
         </nav>
         <script>
-            // Automatically highlight the current navigation link based on the URL
             (function () {
                 const current = window.location.pathname.split('/').pop() || 'index.html';
                 document.querySelectorAll('.menu a').forEach(link => {
