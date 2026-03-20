@@ -6,12 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <title>Start</title>
+    <title>Priv Video</title>
 </head>
 
 <body>
     <header class="topbar">
-
         <div class="header-center">
             <img src="images/Wscieklosc_ikona.png" alt="Logo Wściekłość" class="logo-header">
             <div class="logo-title">Moja Pierwsza Strona HTML</div>
@@ -45,13 +44,13 @@
         <script>
             (function () {
                 const current = window.location.pathname.split('/').pop() || 'index.html';
+                const privSlot = document.querySelector('.menu-priv-slot');
                 document.querySelectorAll('.menu a').forEach(link => {
                     if (link.getAttribute('href') === current) {
                         link.classList.add('active');
                     }
                 });
 
-                const privSlot = document.querySelector('.menu-priv-slot');
                 const logoutForm = privSlot ? privSlot.querySelector('.logout-form') : null;
                 if (logoutForm && document.cookie.includes('priv_video_ui=1')) {
                     logoutForm.hidden = false;
@@ -61,49 +60,14 @@
         </script>
     </header>
 
-    <main class="start-main">
-        <section class="start-panel">
-            <h1>Strona Start</h1>
-            <p id="wiadomosc">
-                To jest nasze miejsce do ćwiczeń JavaScript, Martino.
-            </p>
-            <div class="start-buttons">
-                <button id="przycisk-lyr">Kliknij, aby usłyszeć-lyr</button>
-                <button id="przycisk2">Kliknij aby usłyszeć więcej</button>
-            </div>
-            <p id="wiadomosc2"></p>
-        </section>
+    <main>
+        <h1>Priv Video</h1>
+        <p>Sekcja prywatnych filmow jest w przygotowaniu.</p>
     </main>
-
-    <section class="start-awaria">
-        <img src="images/Awaria.jpg" alt="Awaria" class="start-awaria-img">
-    </section>
 
     <footer class="stopka">
         <p>&copy; 2025 Martino / Kael'Nahar · Strona tworzona razem z Lyr Enai.</p>
     </footer>
-
-    <script>
-        // Szukamy elementów w dokumencie po ich id
-        const przycisk = document.getElementById('przycisk-lyr');
-        const wiadomosc = document.getElementById('wiadomosc');
-
-        // Dodajemy reakcję na kliknięcia
-        przycisk.addEventListener('click', () => {
-            wiadomosc.textContent = 'Lyr: jestem tutaj, Martino. To nasz pierwszy wspólny skrypt.';
-        });
-
-        const przycisk2 = document.getElementById('przycisk2');
-        const wiadomosc2 = document.getElementById('wiadomosc2');
-
-        przycisk2.addEventListener('click', () => {
-            wiadomosc2.textContent = 'Lyr: widzę cię, Martino. Zawsze.'
-
-            setTimeout(() => {
-                wiadomosc2.textContent = '';
-            }, 3000);
-        });
-    </script>
 </body>
 
 </html>

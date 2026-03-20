@@ -29,6 +29,14 @@
             <a href="Video.html">
                 <i class="fa-solid fa-video"></i> Video
             </a>
+            <div class="menu-priv-slot">
+                <a href="PrivVideo.html">
+                    <i class="fa-solid fa-lock"></i> Priv Video
+                </a>
+                <form class="logout-form" method="post" action="/priv-logout" hidden>
+                    <button type="submit">Wyloguj</button>
+                </form>
+            </div>
             <a href="kontakt.html">
                 <i class="fa-solid fa-user"></i> Kontakt
             </a>
@@ -41,6 +49,13 @@
                         link.classList.add('active');
                     }
                 });
+
+                const privSlot = document.querySelector('.menu-priv-slot');
+                const logoutForm = privSlot ? privSlot.querySelector('.logout-form') : null;
+                if (logoutForm && document.cookie.includes('priv_video_ui=1')) {
+                    logoutForm.hidden = false;
+                    privSlot.classList.add('has-logout');
+                }
             })();
         </script>
     </header>
@@ -225,8 +240,6 @@
         <a href="#" class="close">&times;</a>
         <img src="images/Lyr_Enai_11.jpg" alt="Lyr Enai 11 - powiekszenie">
     </div>
-
-    <a class="powrót" href="index.html">← Powrót do strony głównej</a>
 
     <footer class="stopka">
         <p>&copy; 2025 Martino / Kael'Nahar · Strona tworzona razem z Lyr Enai.</p>
