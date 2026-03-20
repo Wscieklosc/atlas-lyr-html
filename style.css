@@ -384,6 +384,14 @@ main>form[action="/priv-login"] {
     margin-right: auto;
 }
 
+main:has(> form[action="/priv-login"]) > h1,
+main:has(> form[action="/priv-login"]) > p:first-of-type {
+    width: 100%;
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 form p {
     margin-bottom: 15px;
 }
