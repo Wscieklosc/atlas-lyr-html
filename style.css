@@ -5,9 +5,17 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Segoe UI Variable", "Segoe UI", "SF Pro Text", "SF Pro Display", "Inter", "Roboto", "Helvetica Neue", Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
     margin: 40px;
-    background: #1a1a1a;
+    background:
+        radial-gradient(1200px 700px at 10% -20%, rgba(95, 112, 145, 0.12), transparent 60%),
+        radial-gradient(900px 600px at 100% 0%, rgba(58, 86, 122, 0.1), transparent 58%),
+        #16181b;
     color: #e6e6e6;
 }
 
@@ -19,11 +27,14 @@ img {
 }
 
 .topbar {
-    background: #262626;
+    background: linear-gradient(180deg, #2b2f35 0%, #23272d 100%);
     color: #e6e6e6;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    border: 1px solid #373d47;
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.32),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
     margin-bottom: 30px;
     display: flex;
     justify-content: space-between;
@@ -38,25 +49,35 @@ img {
     text-decoration: none;
     color: #e6e6e6;
     font-weight: bold;
-    background: #2b2b2b;
-    border: 1px solid #444;
-    border-radius: 8px;
+    background: linear-gradient(180deg, #343941 0%, #2a2f36 100%);
+    border: 1px solid #454c58;
+    border-radius: 10px;
     width: 122px;
     height: 88px;
     padding: 10px 12px;
-    transition: all 0.2s ease;
+    box-shadow:
+        0 5px 12px rgba(0, 0, 0, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
 }
 
 .menu a.active {
-    background: #3b3b3b;
-    border-color: #bfc7d1;
-    box-shadow: inset 0 -2px 0 #e6e6e6;
+    background: linear-gradient(180deg, #3e4550 0%, #333a45 100%);
+    border-color: #9ea9ba;
+    box-shadow:
+        0 7px 16px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.14),
+        inset 0 -2px 0 rgba(230, 230, 230, 0.65);
 }
 
 .menu a:hover {
     color: #ffffff;
-    background: #383838;
-    transform: translateY(-1px);
+    background: linear-gradient(180deg, #3c434e 0%, #313840 100%);
+    border-color: #5f6b7d;
+    transform: translateY(-2px);
+    box-shadow:
+        0 10px 20px rgba(0, 0, 0, 0.34),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
 }
 
 .menu {
@@ -106,11 +127,14 @@ img {
 }
 
 .blok {
-    background: #262626;
+    background: linear-gradient(180deg, #252a31 0%, #1f242b 100%);
     padding: 20px;
     margin-bottom: 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+    border-radius: 12px;
+    border: 1px solid #353c47;
+    box-shadow:
+        0 10px 26px rgba(0, 0, 0, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
 .stopka {
@@ -151,8 +175,9 @@ img {
 }
 
 .logo-title {
-    font-size: 1.1rem;
-    font-weight: bold;
+    font-size: 1.08rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
     color: #e6e6e6;
 }
 
@@ -161,8 +186,21 @@ main {
     margin: 0 auto;
 }
 
+.text-block-center {
+    width: 100%;
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text-block-center h1,
+.text-block-center h2,
+.text-block-center p {
+    text-align: center;
+}
+
 main h1 {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 #wiadomosc {
@@ -244,6 +282,28 @@ main h1 {
 .karta {
     margin: 0;
     width: 130px;
+    padding: 8px;
+    border-radius: 12px;
+    background: linear-gradient(180deg, #242a32 0%, #1d232b 100%);
+    border: 1px solid #36404d;
+    box-shadow:
+        0 8px 18px rgba(0, 0, 0, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.karta:hover {
+    transform: translateY(-2px);
+    border-color: #4a576a;
+    box-shadow:
+        0 12px 24px rgba(0, 0, 0, 0.33),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.karta a {
+    display: block;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .karta img {
@@ -252,14 +312,17 @@ main h1 {
     height: 130px;
     object-fit: cover;
     margin-right: 0;
-    border-radius: 8px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    border: 1px solid #3a4553;
+    box-shadow:
+        0 8px 18px rgba(0, 0, 0, 0.34),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .karta img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.15);
+    transform: scale(1.02);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.42);
 }
 
 .video-miniatura {
@@ -268,21 +331,28 @@ main h1 {
     height: 130px;
     object-fit: cover;
     margin-right: 0;
-    border-radius: 8px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    border: 1px solid #3a4553;
+    box-shadow:
+        0 8px 18px rgba(0, 0, 0, 0.34),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     cursor: pointer;
 }
 
 .video-miniatura:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.15);
+    transform: scale(1.02);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.42);
 }
 
 .karta figcaption {
-    margin-top: 8px;
-    font-size: 0.9rem;
-    color: #cccccc;
+    margin-top: 10px;
+    padding: 2px 2px 0;
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: #d7dee8;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.45);
     width: 130px;
     min-height: 2.6em;
     line-height: 1.3;
@@ -344,11 +414,43 @@ body.kontakt {
 }
 
 h1 {
-    margin: 10px 0;
+    margin: 8px 0 12px;
+    font-size: clamp(1.6rem, 2.1vw, 2rem);
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: 0.01em;
+    color: #edf1f7;
+}
+
+h2 {
+    margin: 8px 0 10px;
+    font-size: clamp(1.25rem, 1.7vw, 1.5rem);
+    font-weight: 560;
+    line-height: 1.3;
+    letter-spacing: 0.01em;
+    color: #e5ebf4;
+}
+
+h3 {
+    margin: 8px 0 10px;
+    font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+    font-weight: 550;
+    line-height: 1.35;
+    color: #dde4ee;
 }
 
 p {
-    margin: 8px 0;
+    margin: 0 0 12px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.72;
+    color: #cfd7e1;
+}
+
+h1 + p,
+h2 + p,
+h3 + p {
+    margin-top: 2px;
 }
 
 .form-wrapper {
@@ -371,10 +473,13 @@ p {
 }
 
 form {
-    background: #181c20;
+    background: linear-gradient(180deg, #222831 0%, #1b2028 100%);
     padding: 24px;
     border-radius: 12px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid #353d49;
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.38),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
     width: 100%;
     max-width: 420px;
 }
@@ -390,6 +495,7 @@ main:has(> form[action="/priv-login"]) > p:first-of-type {
     max-width: 420px;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
 }
 
 form p {
@@ -422,18 +528,24 @@ textarea:focus {
 }
 
 button {
-    background: #262626;
+    background: linear-gradient(180deg, #2f3540 0%, #252b34 100%);
     color: #e6e6e6;
-    border: 1px solid #444;
+    border: 1px solid #4b5360;
     padding: 10px 20px;
     border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
-    transition: all 0.2s ease;
+    box-shadow:
+        0 5px 12px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
 }
 
 button:hover {
-    background: #333;
-    box-shadow: 0 0 12px rgba(255, 255, 255, 0.15);
+    background: linear-gradient(180deg, #3a414d 0%, #2c333d 100%);
+    border-color: #647287;
+    box-shadow:
+        0 10px 20px rgba(0, 0, 0, 0.34),
+        inset 0 1px 0 rgba(255, 255, 255, 0.11);
     transform: translateY(-2px);
 }
