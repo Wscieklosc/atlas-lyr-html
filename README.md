@@ -1,1 +1,1 @@
-![CodeRabbit Pull Request Reviews](https://img.shields.io/coderabbit/prs/github/Wscieklosc/atlas-lyr-html?utm_source=oss&utm_medium=github&utm_campaign=Wscieklosc%2Fatlas-lyr-html&labelColor=171717&color=FF570A&link=https%3A%2F%2Fcoderabbit.ai&label=CodeRabbit+Reviews)
+
